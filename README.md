@@ -32,8 +32,14 @@ First run the following command:
 Then access localhost:8888 on your browser and when asked for a password use _mir_
 
 ## Add new requirements
-Simply add them into the requirements.txt file as it is done in [here](https://github.com/MTG/MIR-toolbox-docker/blob/master/requirements.txt)
-and run:
+You can install new dependencies on the docker image by adding the command you need on the Dockerfile prefixed by 'RUN'.
+As an example, if you would like to install python3 setuptools you would have to add the following at the end of the Dockerfile:
+
+    RUN apt-get install -y python3-setuptools
+    
+As a helper, we already provide a requirements.txt file which can be used to install most python packages, just add the package name to the file. Keep in mind that the _pip install -r requirements.txt_ command does not install the packages in order.
+
+Once you added a new dependency, you can re-build and run the image like:
 
     docker-compose up --build
 
