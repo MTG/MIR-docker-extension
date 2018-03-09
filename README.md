@@ -37,7 +37,7 @@ As an example, if you would like to install python3 setuptools you would have to
 
     RUN apt-get install -y python3-setuptools
     
-As a helper, we already provide a requirements.txt file which can be used to install most python packages, just add the package name to the file. Keep in mind that the _pip install -r requirements.txt_ command does not install the packages in order.
+For python packages, as a helper, we already provide a requirements.txt file which can be used to install most python packages, just add the package name to the file. Keep in mind that the _pip install -r requirements.txt_ command does not install the packages in order.
 
 Once you added a new dependency, you can re-build and run the image like:
 
